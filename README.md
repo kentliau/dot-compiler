@@ -32,8 +32,7 @@ Create a doT.js template (templates/sample.html).  Templates must have a .html e
 
 	dot-packer -d templates/ -o ./templates.js
 	
-Once you include the templates.js module in your webpage you can access
-the template in javascript.
+Once you include the templates.js module to your code, you can access the template like this:
 
 ```
 var templates = require('./templates'),
