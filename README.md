@@ -1,6 +1,6 @@
 #dot-module
 
-dot-module lets you simple transform your templates directory into one CommonJS module. Best served with [modules-webmake](https://github.com/medikoo/modules-webmake).
+dot-module lets you simple transform your templates directory into one CommonJS module. Best served with [modules-webmake](https://github.com/medikoo/modules-webmake). Some ideas (and the example below) took from [dot-packer](https://github.com/Katahdin/dot-packer).
 
 ### Installation:
 
