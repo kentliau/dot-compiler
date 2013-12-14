@@ -1,15 +1,15 @@
 {
-    "name": "dot-module",
+    "name": "dot-compiler",
     "version": "0.0.1",
-    "description": "Precompile doT.js templates and build CommonJS module.",
+    "description": "Precompile doT.js templates.",
     "preferGlobal": "true",
-    "main": "dot-module.js",
-    "bin": { "dot-module": "dot-module.js" },
-    "author": "Slawek Kolodziej",
+    "main": "dot-compiler.js",
+    "bin": { "dot-compiler": "dot-compiler.js" },
+    "author": "Kent Liau",
     "keywords": ["templates", "dot.js", "webmake"],
     "repository" : {
         "type": "git",
-        "url": "https://github.com/slawekkolodziej/dot-module.git"
+        "url": "https://github.com/kentliau/dot-compiler.git"
     },
     "dependencies": {
         "commander": "0.5.2",
