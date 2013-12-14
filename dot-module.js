@@ -10,6 +10,7 @@ cmd.version('0.0.1')
   .usage('dot-module')
   .option('-d, --dir [value]', 'Templates directory <path>')
   .option('-o, --output [value]', 'Output file <path>', "templates.js")
+  .option('-g, --global [value]', 'variable to hold the compiled script', "window.JST")
   .parse(process.argv);
 
 if (!cmd.dir){
@@ -36,7 +37,7 @@ function walk(dir) {
       walk(filename);
     }
 
-    if (!isHTML(filename))
+    if (!isJST(filename))
       return;
 
     readFile(filename, dir, fs.readFileSync(dir + filename));
@@ -51,11 +52,11 @@ function readFile (filename, dir, data) {
   templates[name] = compiled;
 }
 
-function isHTML(name) {
+function isJST(name) {
   if (!~name.indexOf('.'))
     return false;
 
-  return name.split('.').slice(-1)[0].toLowerCase() === 'html';
+  return name.split('.').slice(-1)[0].toLowerCase() === 'jst';
 }
 
 function buildModule() {
@@ -65,7 +66,7 @@ function buildModule() {
   for (n in templates)
     content.push('"' + n + '": ' + templates[n]);
 
-  return 'module.exports = {' +
+  return cmd.global + ' = {' +
     content.join(',') +
   '};';
 }
