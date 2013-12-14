@@ -8,7 +8,7 @@ var fs  = require('fs'),
 
 cmd.version('0.0.1')
   .usage('dot-module')
-  .option('-d, --dir [value]', 'Templates directory <path>')
+  .option('-d, --dir [value]', 'Templates directory <path>', "./")
   .option('-o, --output [value]', 'Output file <path>', "templates.js")
   .option('-g, --global [value]', 'variable to hold the compiled script', "window.JST")
   .parse(process.argv);
